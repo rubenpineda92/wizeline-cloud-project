@@ -5,6 +5,7 @@
  */
 package com.crm.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -37,10 +38,12 @@ public class Oportunity implements Serializable {
     
     private Double amount;
     
+    @JsonProperty("success_rate")
     private Double successRate;
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "lead_id")
+    @JsonProperty("lead_id")
     private Lead lead;
     
     

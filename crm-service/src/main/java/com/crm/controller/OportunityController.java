@@ -7,6 +7,7 @@ package com.crm.controller;
 
 import com.crm.domain.Oportunity;
 import com.crm.repository.OportunityRepository;
+import com.crm.service.OportunityService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,13 +27,16 @@ public class OportunityController {
     @Autowired
     private OportunityRepository repo;
     
+    @Autowired
+    private OportunityService oportunityService;
+    
     @GetMapping
     public List<Oportunity> getAll() {
         return (List<Oportunity>) repo.findAll();
     }
     
     @PostMapping
-    public Oportunity save(@RequestBody Oportunity category){
-        return repo.save(category);
+    public Oportunity save(@RequestBody Oportunity category) throws Exception{
+        return oportunityService.save(category);
     }
 }

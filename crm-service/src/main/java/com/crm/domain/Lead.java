@@ -5,6 +5,7 @@
  */
 package com.crm.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Entity;
@@ -38,10 +39,17 @@ public class Lead implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
+    @JsonProperty("name")
     private String leadName;
     
+    @JsonProperty("direction")
     private String strDirection;
     
+    @JsonProperty("date")
     @Temporal(TemporalType.TIMESTAMP)
     private Date leadDate;
+    
+    public Lead(Long id){
+        this.id = id;
+    }
 }

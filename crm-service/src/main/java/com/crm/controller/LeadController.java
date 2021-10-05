@@ -31,7 +31,6 @@ public class LeadController {
         return (List<Lead>) repo.findAll();
     }
     
-    
     @PostMapping
     public Lead save(@RequestBody Lead category){
         return repo.save(category);
