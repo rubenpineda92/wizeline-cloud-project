@@ -15,3 +15,5 @@ For Spring Cloud i will use:
   - Eureka server: It allows our micro services communicate with each other without hard-coding the hostname and port.
   - Hystrix: It will be our circuit breaker to avoid unnecesary failures.
   - Spring config: It gives us a centralized configuration for our services
+![alt text](https://spring.io/images/cloud-diagram-dark-b902fd07e60945a9a8930ca01f86bdf3.svg)
+
