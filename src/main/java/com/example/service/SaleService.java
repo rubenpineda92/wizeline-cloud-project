@@ -7,6 +7,7 @@ package com.example.service;
 
 import com.example.domain.Sale;
 import com.example.repository.SaleRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,12 +16,11 @@ import org.springframework.stereotype.Service;
  * @author ruben
  */
 @Service
+@AllArgsConstructor
 public class SaleService {
     
-    @Autowired
-    private SaleRepository saleRepository;
-    @Autowired
-    private ProductService productService;
+    private final SaleRepository saleRepository;
+    private final ProductService productService;
     
     public Sale registerSale(Sale sale) throws Exception {
         if(sale.getPrice() == null || sale.getPrice() <= 0.0){
@@ -39,7 +39,7 @@ public class SaleService {
         
         sale = saleRepository.save(sale);
         
-        productService.registerSale(sale);
+        productService.reduceStock(sale);
         
         return sale;
     }

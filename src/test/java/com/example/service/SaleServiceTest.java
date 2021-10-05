@@ -3,19 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.example.repository;
+package com.example.service;
 
 import com.example.domain.Category;
 import com.example.domain.Product;
-import com.example.service.ProductService;
+import com.example.repository.ProductRepository;
+import com.example.repository.SaleRepository;
 import java.util.Date;
-import java.util.List;
-import java.util.Optional;
-import org.assertj.core.api.Assertions;
 import org.assertj.core.util.Lists;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
@@ -26,16 +23,20 @@ import org.springframework.boot.test.context.SpringBootTest;
  * @author ruben
  */
 @SpringBootTest
-public class ProductRepositoryTest {
+public class SaleServiceTest {
     
     @Mock
     private ProductRepository productRepository;
+    @Mock
+    private SaleRepository saleRepository;
     private AutoCloseable closeable;
-    
+    private SaleService saleService;
+    private ProductService productService;
     
     @BeforeEach
     public void beforeTests() {
         closeable = MockitoAnnotations.openMocks(this);
+        productService = new ProductService(productRepository);
         
         Category sugaryCategory = Category.builder().
                         id(1L).
@@ -68,17 +69,5 @@ public class ProductRepositoryTest {
     @AfterEach
     void closeService() throws Exception {
         closeable.close();
-    }
-    
-    @Test
-    public void whenFindByName_thenReturnListCategory() {
-        Category sugaryCategory = Category.builder().
-                        id(1L).
-                        name("Sugary").
-                        build();
-        
-        List<Product> listProducts = productRepository.findByCategory(sugaryCategory);
-        
-        Assertions.assertThat(listProducts).isNotEmpty();
     }
 }
