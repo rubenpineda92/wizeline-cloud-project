@@ -5,6 +5,10 @@ In this project i will do a simple API for inventory management where:
   - If you make a sale, the stock of the product is reduced.
   - If you bought a product, the stock is incremented.
 
+And a second simple API for CRM where:
+  - You can add new leads.
+  - You can add an opportunity to a lead.
+
 For Spring Cloud i will use:
   - Gateway: It will be our proxy to have only one port to access all our micro services.
   - Ribbon: It will be our load balancer.
