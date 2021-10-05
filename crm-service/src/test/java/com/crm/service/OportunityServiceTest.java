@@ -39,7 +39,7 @@ public class OportunityServiceTest {
     @BeforeEach
     public void beforeTests() {
         closeable = MockitoAnnotations.openMocks(this);
-        oportunityService = new OportunityService(oportunityRepository, leadRepository);
+        oportunityService = new OportunityService(oportunityRepository, leadRepository, null);
         Lead lead = Lead.builder().strDirection("Iturbide 75").leadDate(new Date()).leadName("New lead 1").build();
         
         Mockito.when(leadRepository.findById(1L)).thenReturn(Optional.of(lead));

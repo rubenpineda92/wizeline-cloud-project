@@ -5,6 +5,7 @@
  */
 package com.crm.domain;
 
+import com.crm.model.Product;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -14,6 +15,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -37,6 +39,12 @@ public class Oportunity implements Serializable {
     private String name;
     
     private Double amount;
+    
+    @Transient
+    private Double quantity;
+    
+    @Transient
+    private Product product; 
     
     @JsonProperty("success_rate")
     private Double successRate;
