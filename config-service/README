@@ -3,7 +3,7 @@ To make the configuration service we only need one dependency "spring-cloud-conf
 Since i was working with an older tutorial, it needed another dependency "spring-cloud-starter-bootstrap",
 but that has changed so i should check how to do it without it.
 
-To make the config server work, you need to add the configuration files that the server will expose in your github.
+To make the config server work, you need to add the configuration files that the server will expose in a repository(There are other methods too).
 To do that i added a folder named "config-data" to store all the configurations of my services.
 
 Then i had to add the "spring-cloud-starter-config" dependency to all my services and change the application.properties
