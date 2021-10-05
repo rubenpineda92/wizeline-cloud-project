@@ -7,7 +7,8 @@ In this project i will do a simple API for inventory management where:
 
 And a second simple API for CRM where:
   - You can add new leads.
-  - You can add an opportunity to a lead.
+  - You can add an oportunity to a lead.
+  - When a new oportunity is added if it has 100% success rate, i will generate a sale in my inventory service automatically
 
 For Spring Cloud i will use:
   - Gateway: It will be our proxy to have only one port to access all our micro services.
