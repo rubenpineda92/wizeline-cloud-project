@@ -1,0 +1,10 @@
+## YAML Template.
+---
+spring:
+    application:
+        name: crm-service
+    cloud:
+        config:
+            uri: http://localhost:8081
+            username: root
+            password: password1
