@@ -15,10 +15,10 @@ spring:
 
       routes:
         - id: crm-service
-          uri: http://localhost:8084/
+          uri: lb://crm-service
           predicates:
             - Path=/crm/**
         - id: inventory-service
-          uri: http://localhost:8082/
+          uri: lb://inventory-service
           predicates:
             - Path=/inventory/**
