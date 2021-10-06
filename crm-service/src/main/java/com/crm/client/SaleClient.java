@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author ruben
  */
 @FeignClient(name = "inventory-service", fallback = SaleHystrixFallbackFactory.class)
+@RequestMapping("/sale")
 public interface SaleClient {
     
     @GetMapping("/{id}")
