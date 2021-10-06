@@ -11,19 +11,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  *
  * @author ruben
  */
 @FeignClient(name = "inventory-service", fallback = SaleHystrixFallbackFactory.class)
-@RequestMapping("/sale")
 public interface SaleClient {
     
-    @GetMapping("/{id}")
+    @GetMapping("/sale/{id}")
     public Sale getSale(@PathVariable Long id);
     
-    @PostMapping
+    @PostMapping("/sale")
     public Sale save(@RequestBody Sale sale);
 }
