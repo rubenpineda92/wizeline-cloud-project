@@ -39,7 +39,7 @@ public class Sale implements Serializable {
     
     private Double total;
     
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "product_id")
     private Product product;
 }

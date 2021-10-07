@@ -49,7 +49,7 @@ public class Oportunity implements Serializable {
     @JsonProperty("success_rate")
     private Double successRate;
     
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "lead_id")
     @JsonProperty("lead_id")
     private Lead lead;
