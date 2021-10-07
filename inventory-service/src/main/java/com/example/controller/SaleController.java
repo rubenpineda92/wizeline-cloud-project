@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author ruben
  */
 @RestController
-@RequestMapping("/sale")
+@RequestMapping("/inventory/sale")
 public class SaleController {
     
     @Autowired

@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author ruben
  */
 @RestController
-@RequestMapping("/leads")
+@RequestMapping("crm/leads")
 public class LeadController {
     
     @Autowired

@@ -19,9 +19,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 @FeignClient(name = "inventory-service", fallback = SaleHystrixFallbackFactory.class)
 public interface SaleClient {
     
-    @GetMapping("/sale/{id}")
+    @GetMapping("inventory/sale/{id}")
     public Sale getSale(@PathVariable Long id);
     
-    @PostMapping("/sale")
+    @PostMapping("inventory/sale")
     public Sale save(@RequestBody Sale sale);
 }

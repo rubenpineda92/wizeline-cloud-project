@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author ruben
  */
 @RestController
-@RequestMapping("/categories")
+@RequestMapping("/inventory/categories")
 public class CategoryController {
     
     @Autowired
